@@ -28,7 +28,7 @@ hello 👋，我是 oldwinter ❄️，一个云计算工程师，写过几万�
 <strong>🆕 最近创建：</strong>
 <ul>
   {% assign recent_notes = site.notes | sort: "date created" | reverse %}
-  {% for note in recent_notes  limit: 6 %}
+  {% for note in recent_notes  limit: 20 %}
     <li>
       {{ note['date created']}} — <a class="internal-link" href="{{ note.url }}">{{ note.title }}</a>
     </li>
@@ -40,7 +40,7 @@ hello 👋，我是 oldwinter ❄️，一个云计算工程师，写过几万�
 
 <ul>
   {% assign recent_notes = site.notes | sort: "date modified" | reverse %}
-  {% for note in recent_notes  limit: 6 %}
+  {% for note in recent_notes  limit: 20 %}
     <li>
       {{ note['date modified']}} — <a class="internal-link" href="{{ note.url }}">{{ note.title }}</a>
     </li>
