@@ -1,7 +1,5 @@
 ---
 title: Home
-date created: 星期六, 六月 1日 2024, 2:47:51 下午
-date modified: 星期六, 六月 1日 2024, 2:48:19 下午
 banner: "/assets/images/banners/man_u.jpg"
 layout: home
 heading: 'Explore Infinity'
