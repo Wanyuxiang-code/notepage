@@ -1,10 +1,13 @@
 ---
-title: AboutTheGarden
+title: Home
 date created: 星期六, 六月 1日 2024, 2:47:51 下午
 date modified: 星期六, 六月 1日 2024, 2:48:19 下午
-layout: page
-title: About
+banner: "/assets/images/banners/man_u.jpg"
+layout: home
+heading: 'Explore Infinity'
+subheading: 'Beyond the Horizon'
 ---
+
 hello 👋，我是 oldwinter ❄️，一个云计算工程师，写过几万行代码，带过十几人团队。
 
 这里是一座「全开放式，每日更新」的，由原子化的编织而成。目前主要在浇灌这几个领域 ⭕：
@@ -28,7 +31,7 @@ hello 👋，我是 oldwinter ❄️，一个云计算工程师，写过几万�
 <strong>🆕 最近创建：</strong>
 <ul>
   {% assign recent_notes = site.notes | sort: "date created" | reverse %}
-  {% for note in recent_notes  limit: 20 %}
+  {% for note in recent_notes  limit: 6 %}
     <li>
       {{ note['date created']}} — <a class="internal-link" href="{{ note.url }}">{{ note.title }}</a>
     </li>
@@ -40,7 +43,7 @@ hello 👋，我是 oldwinter ❄️，一个云计算工程师，写过几万�
 
 <ul>
   {% assign recent_notes = site.notes | sort: "date modified" | reverse %}
-  {% for note in recent_notes  limit: 20 %}
+  {% for note in recent_notes  limit: 6 %}
     <li>
       {{ note['date modified']}} — <a class="internal-link" href="{{ note.url }}">{{ note.title }}</a>
     </li>

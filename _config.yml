@@ -41,6 +41,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 
+highlighter: rouge
 
 # Theme settings
 theme:
@@ -237,10 +238,6 @@ collections:
     permalink: /:slug
 
 defaults:
-  - scope:
-      path: "**/*"
-    values:
-      layout: "default"
   - scope:
       path: "_notes/**/*.md"
     values:
