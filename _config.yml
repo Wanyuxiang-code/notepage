@@ -40,8 +40,16 @@ plugins:
 markdown: kramdown
 kramdown:
   input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:   # Rouge Options › https\://github.com/jneen/rouge#full-options
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
-highlighter: rouge
+
 
 # Theme settings
 theme:
@@ -145,10 +153,10 @@ theme:
 # this and add the path to the pages in order as they should show up
 header_pages:
    - index.md
-   - archives.md
-   - categories.md
-   - tags.md
-   - about.md
+   - archives.html
+   - categories.html
+   - tags.html
+   - about.html
 
 # Page default value
 # defaults:
@@ -228,14 +236,15 @@ header_pages:
 #   theme: "github-light"
 #   follow_site_theme: true
 
-sass:
-  sass_dir:          _sass
-  style:            :compressed
-
 collections:
   notes:
     output: true
     permalink: /:slug
+
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
 
 defaults:
   - scope:
