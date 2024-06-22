@@ -33,6 +33,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-spaceship
+  - jekyll-archives
 
 
 # Build settings
