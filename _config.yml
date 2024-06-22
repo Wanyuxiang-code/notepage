@@ -35,12 +35,27 @@ plugins:
   - jekyll-spaceship
   - jekyll-archives
 
+jekyll-spaceship:
+  mathjax: true
+  mathjax_options:
+    tex:
+      inlineMath: [["$", "$"], ["\\(", "\\)"]]
+      displayMath: [["$$", "$$"], ["\\[", "\\]"]]
 
 # Build settings
 # highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM
+
+  math_engine: mathjax
+  math_engine_opts:
+    preview: false
+    message_style: "none"
+    tex2jax:
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      
   syntax_highlighter: rouge
   syntax_highlighter_opts:   # Rouge Options › https\://github.com/jneen/rouge#full-options
     css_class: highlight
