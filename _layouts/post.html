@@ -45,6 +45,7 @@ sidebar:
 
     {%- assign result = hidden | where_exp: "item", "item == 'related_posts'" -%}
     {%- if result.size == 0 -%}
+    <!--屏蔽相关文章
     <div class="post-related">
       <div>Related Articles</div>
       <ul>
@@ -66,7 +67,7 @@ sidebar:
       </ul>
     </div>
     {%- endif -%}
-
+    -->
     {%- assign result = hidden | where_exp: "item", "item == 'comments'" -%}
     {%- if result.size == 0 -%}
     <div class="post-comments">
