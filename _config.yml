@@ -263,6 +263,6 @@ defaults:
   - scope:
       path: "_posts/**/*.md"
     values:
-      layout: "note"
+      layout: "post"
 
 
