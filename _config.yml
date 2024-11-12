@@ -172,7 +172,7 @@ header_pages:
    - archives.html
    - categories.html
    - articles.html
-   - tags.html
+#  - tags.html
    - about.html
 
 # Page default value
@@ -263,6 +263,6 @@ defaults:
   - scope:
       path: "_posts/**/*.md"
     values:
-      layout: "post"
+      layout: "note"
 
 
