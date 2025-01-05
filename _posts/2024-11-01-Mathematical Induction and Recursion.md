@@ -1,11 +1,11 @@
 ---
 title: Mathematical Induction and Recursion
 date: 2024-11-01
-date modified: 2024-11-09
+date modified: 2024-12-27
 categories: Math213
-tags:
-  - Math213
+tags: [Math213]
 ---
+
 #Math213 
 
 ## Mathematical Induction
@@ -51,18 +51,19 @@ Recursive Step（递归过程）
 ### Linear Recurrences
 
 **相关概念**
-- 线性递归：
+- **线性递归**：
 
 $$
 a_{n} = f(a_{n-1},\dots ,a_{n-k}) = s_{1}a_{n-1}+\dots+s_{k}a_{n-k}+f(n) \text{ 其中对应的s与f(n)均为实数}
 $$
 
 - 线性齐次递归 (Linear Homogeneous Relation)：  
-在线性递归的基础上要求递归表达式中无多余的常数，即 $f(n)=0$
+在线性递归的基础上要求递归表达式中无多余的常数，即 $f(n)=0$  
+注意系数本身不一定要求为常数，可为与 n 有关的函数
 - 线性递归的阶数或度数 (order/degree)  
 当前项与最远项之间的差距
 
-**一阶线性递归**
+1. **一阶线性递归**
 - **定义**
 
 $$
@@ -72,4 +73,88 @@ $$
 **First Order**: 递归表达式只出现前一阶情况  
 **Linear**: 出现的递归式均为一次
 
-![d3269386e6b24206d4ccee917503feb.png](https://s2.loli.net/2024/11/08/qrv6O84jXbsaHtu.png)
+![d3269386e6b24206d4ccee917503feb.png](https://s2.loli.net/2024/11/08/qrv6O84jXbsaHtu.png)  
+**Theorem**
+
+$$
+\sum_{i=1}^{n}ix_{i}^{i} = \frac{nx^{n+2}-(n+1)x^{n+1}+x}{(1-x)^{2}}
+$$
+
+2. **齐次线性递归特征根方程**
+
+n 阶齐次线性递推数列系数为常数（简称线性递推数列）是指形如：
+
+$$
+a_{n}=c_{1}a_{n-1}+c_{2}a_{n-2}+⋯+c_{n-1}a_{n}+c_{n}a_{0} ​
+$$
+
+的数列，其中 $c_{1},c_{2},\dots,c_{n}$ ​为常数系数，且是齐次的，即右边没有常数项。  
+**特征根方程的求解**
+- 将递推数列的系数代入特征方程，得到一个关于 r 的多项式。
+- 求解该多项式，得到所有的特征根 $r_{1},\dots ,r_{n}$  
+- 结合 n 个初始项得到最终表示（如果初始项不足可能会有非唯一解）  
+ **特征根的情况及其对应解法**
+- **不同的特征根**（无重根）：若特征方程有 n 个不同的根 $r_{1},\dots,r_{n}$ ​，则通解为：
+
+$$
+a_{n} = A_{1}r_{1}^{n} + A_{2}r_{2}^{n}+\dots A_{n}r_{n}^{n}
+$$
+
+- **有重根的情况**：若特征方程有某个重根 r，重根的情况需要考虑不同阶数的 $r^{n}$ 乘以多项式。若重根 r 的重数为 k，则通解的一部分是：
+
+$$
+(A_{1}+A_{2}n+\dots A_{k}n^{k-1})r^{n}
+$$
+
+- **复根情况**：直接用实根相同方法解决，或考虑其指数与三角形式利用 DeMoivre's Theorem 化简  
+![5337d68e5dedd11e68cd0cc34a11841.png](https://s2.loli.net/2024/11/26/vasV7u3oJIeOhiQ.png)
+
+
+
+3. **线性非齐次递归**  
+形如:
+
+$$
+a_{n} = \sum_{i=1}^{k}c_{i}a_{n-i} + F(n)
+$$
+
+**线性非齐次递归解的形式形如特解与其对应的线性齐次递归的通解之和**
+
+![7a760cac7f739eae939a5f13d95f071.png](https://s2.loli.net/2024/11/26/Lg6byExrwjKWv5o.png)
+
+**如何寻找特解 ->无一般通解形式，但可对特殊情况进行分类讨论**
+- 多项式
+- 指数函数  
+**利用待定系数法求解，同时关注特征方程根与非齐次函数指数的底数相同的特殊情况**  
+![Particular Solution](https://s2.loli.net/2024/11/26/VLJYWcmaKHC3ijl.png)
+
+==对于特殊情况，注意再待定系数前乘上对应根的重数次幂 n==
+
+> [!warning] 注意
+> - 数列递推的求解一定要注意初始情况与特殊情况，关注是否递推表达式对所有 n 都满足
+> - 线性齐次递归的系数不一定要求为常数
+> - 注意对于非齐次线性递归发现其特征根为 1 时，在求解特解的过程中需**意识到特解多项式也乘了 1 对应的指数幂，所以要根据重数相应升次**
+
+### Growth Rate of Solutions to Recurrences
+
+#### Divide and conquer algorithms
+
+**Problem Form**  
+![124672e37e2709232322d1df14681d4.png](https://s2.loli.net/2024/11/16/jMN82EKiTzZl1Cx.png)
+
+**Binary Search**  
+![f40fbf5fe1e1e50a112b8861a73814b.png](https://s2.loli.net/2024/11/16/e4IZgy9hzkQO7SD.png)  
+![8eb864339694cb7c1d7ae74805c002f.png](https://s2.loli.net/2024/11/16/C69FxEoDQKH7ruc.png)
+
+#### Growth Rate Type
+
+**Theorem**  
+![000b36fd5e267a8fdf3bdf6ba431160.png](https://s2.loli.net/2024/11/16/xqUAc49FR7Kmiet.png)
+
+$$
+T(n) = a^{\log_{2}n}T(1)+n\sum_{i=0}^{\log_{2}n-1}\left( \frac{a}{2} \right)^{i}
+$$
+
+$$
+n\sum_{i=0}^{\log_{2}n-1}\left( \frac{a}{2} \right)^{i} = \frac{n\left(  1-\left( \frac{a}{2} \right)^{\log_{2}n} \right)}{1-\frac{a}{2}}
+$$
